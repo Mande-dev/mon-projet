@@ -1,608 +1,399 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Deo Mande | Développeur Python</title>
-  
-  <!-- Meta tags SEO -->
-  <meta name="description" content="Portfolio de Deo Mande, développeur Python spécialisé en Django et Flask. Découvrez mes compétences et projets en développement web.">
-  <meta name="keywords" content="développeur Python, Django, Flask, développement web, portfolio, Deo Mande">
+  <title>Portfolio – Deo Mande | Développeur Web Full-Stack</title>
+  <meta name="description" content="Portfolio professionnel de Deo Mande, développeur web full-stack spécialisé en applications web modernes.">
   <meta name="author" content="Deo Mande">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-  
-  <!-- Tailwind & DaisyUI -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Animation Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  
-  <!-- CSS personnalisé -->
-  <link rel="stylesheet" href="./style.css">
-  
-  <!-- Configuration Tailwind -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            'float': 'float 3s ease-in-out infinite',
-            'pulse-slow': 'pulse 3s ease-in-out infinite',
-            'bounce-slow': 'bounce 2s ease-in-out infinite',
-          }
-        }
-      },
-      plugins: [require("daisyui")],
-      daisyui: {
-        themes: ["forest", "dark", "light"],
-        darkTheme: "forest",
-      },
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body class="bg-base-100 text-base-content flex flex-col min-h-screen transition-colors duration-300">
+<body>
+  <!-- BARRE DE NAVIGATION -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <i class="fas fa-code"></i>
+        <span>Deo Mande</span>
+      </a>
+      
+      <input type="checkbox" id="nav-toggle">
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+        <li class="nav-item"><a href="#profile-photo" class="nav-link"><i class="fas fa-user"></i> Profil</a></li>
+        <li class="nav-item"><a href="#experience-current" class="nav-link"><i class="fas fa-briefcase"></i> Expérience</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Compétences</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projets</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      
+      <label for="nav-toggle" class="nav-toggle-label">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+    </div>
+  </nav>
 
-  <!-- Navigation -->
-  <nav class="navbar fixed top-0 w-full z-50 bg-primary/90 backdrop-blur-md text-primary-content shadow-lg transition-all duration-300">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex-1">
-          <a href="#" class="btn btn-ghost normal-case text-xl font-bold hover:scale-105 transition-transform">
-            <i class="fas fa-code mr-2"></i>Deo Mande
-          </a>
+  <!-- EN-TÊTE PRINCIPAL -->
+  <header id="home">
+    <div class="container">
+      <h1 class="header-title">Deo Mande</h1>
+      <h2 class="header-subtitle">Développeur Web Full-Stack</h2>
+      <p class="header-intro">
+        Développeur web full-stack de niveau intermédiaire, spécialisé
+        dans la conception et le développement d'applications web
+        performantes, sécurisées et maintenables.
+      </p>
+      <div style="font-size: 2rem; margin-top: 20px;">
+        <i class="fas fa-laptop-code" style="margin: 0 10px;"></i>
+        <i class="fas fa-server" style="margin: 0 10px;"></i>
+        <i class="fas fa-database" style="margin: 0 10px;"></i>
+        <i class="fas fa-mobile-alt" style="margin: 0 10px;"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION PROFIL PHOTO -->
+  <section id="profile-photo">
+    <div class="container">
+      <h2 class="section-title">Profil</h2>
+      <div class="profile-container">
+        <div class="photo-container">
+          <img src="./img/image01.jpg" 
+               alt="Photo professionnelle de Deo Mande" class="profile-photo">
+          <p style="margin-top: 15px; color: var(--gray);">
+            <i class="fas fa-map-marker-alt"></i> Localisé à Haut Sel
+          </p>
         </div>
+        <div class="profile-text">
+          <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.6rem; margin-bottom: 20px; color: var(--primary);">
+            <i class="fas fa-info-circle"></i> À propos de moi
+          </h3>
+          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+            Passionné par le développement web et les nouvelles technologies,
+            j'aime concevoir des solutions digitales répondant à des besoins réels.
+            Je travaille aussi bien sur la partie front-end que back-end,
+            avec une attention particulière portée à la qualité du code.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
+            <div class="detail-badge">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Disponible immédiatement</span>
+            </div>
+            <div class="detail-badge">
+              <i class="fas fa-users"></i>
+              <span>Travail d'équipe</span>
+            </div>
+            <div class="detail-badge">
+              <i class="fas fa-rocket"></i>
+              <span>Innovation continue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Menu Desktop -->
-        <div class="hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 gap-2">
-            <li>
-              <a href="#about" class="btn btn-ghost rounded-lg hover:bg-primary-focus hover:scale-105 transition-all">
-                <i class="fas fa-user mr-2"></i>À propos
-              </a>
-            </li>
-            <li>
-              <a href="#skills" class="btn btn-ghost rounded-lg hover:bg-primary-focus hover:scale-105 transition-all">
-                <i class="fas fa-cogs mr-2"></i>Compétences
-              </a>
-            </li>
-            <li>
-              <a href="#contact" class="btn btn-secondary rounded-lg hover:scale-105 transition-all">
-                <i class="fas fa-envelope mr-2"></i>Contact
-              </a>
-            </li>
+  <!-- SECTION EXPÉRIENCE PROFESSIONNELLE -->
+  <section id="experience-current">
+    <div class="container">
+      <h2 class="section-title">Expérience Professionnelle</h2>
+      
+      <div class="experience-card">
+        <img src="./img/image02.jpg" 
+             alt="Logo Haut Sel" class="company-logo">
+        
+        <div class="experience-content">
+          <h3 class="experience-title">
+            <i class="fas fa-laptop-code"></i> Développeur Web Full-Stack
+          </h3>
+          
+          <div class="experience-details">
+            <div class="detail-badge">
+              <i class="fas fa-building"></i>
+              <span><strong>Entreprise :</strong> Haut Sel</span>
+            </div>
+            <div class="detail-badge">
+              <i class="fas fa-calendar"></i>
+              <span><strong>Période :</strong> 2025 – Aujourd'hui</span>
+            </div>
+            <div class="detail-badge">
+              <i class="fas fa-map-marker-alt"></i>
+              <span><strong>Lieu :</strong> RDC - KISHASA</span>
+            </div>
+          </div>
+          
+          <p style="margin-bottom: 20px; line-height: 1.7;">
+            Je travaille actuellement chez <strong>Haut Sel</strong> en tant que
+            développeur web full-stack. Je participe au développement,
+            à l'amélioration et à la maintenance d'applications web
+            professionnelles utilisées en production.
+          </p>
+          
+          <h4 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: var(--primary);">
+            <i class="fas fa-tasks"></i> Responsabilités
+          </h4>
+          
+          <ul class="responsibilities">
+            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Développement d'applications web complètes</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Création et maintenance d'API backend</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Optimisation des performances et de la sécurité</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Travail en équipe et respect des bonnes pratiques</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Déploiement et maintenance en production</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Menu Mobile -->
-        <div class="lg:hidden">
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-circle btn-ghost">
-              <div class="flex flex-col gap-1">
-                <span class="h-1 w-6 bg-white rounded-full transition-transform"></span>
-                <span class="h-1 w-6 bg-white rounded-full transition-transform"></span>
-                <span class="h-1 w-6 bg-white rounded-full transition-transform"></span>
-              </div>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-primary rounded-box w-52 mt-4 space-y-2">
-              <li>
-                <a href="#about" class="btn btn-ghost w-full justify-start text-white hover:bg-primary-focus">
-                  <i class="fas fa-user mr-3"></i>À propos
-                </a>
-              </li>
-              <li>
-                <a href="#skills" class="btn btn-ghost w-full justify-start text-white hover:bg-primary-focus">
-                  <i class="fas fa-cogs mr-3"></i>Compétences
-                </a>
-              </li>
-              <li>
-                <a href="#contact" class="btn btn-secondary w-full justify-start">
-                  <i class="fas fa-envelope mr-3"></i>Contact
-                </a>
-              </li>
+  <!-- SECTION COMPÉTENCES TECHNIQUES -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Compétences Techniques</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><i class="fas fa-paint-brush"></i> Front-end</h3>
+          <ul class="skill-list">
+            <li><i class="fab fa-html5" style="color: #e34c26;"></i> HTML5</li>
+            <li><i class="fab fa-css3-alt" style="color: #264de4;"></i> CSS3</li>
+            <li><i class="fab fa-js-square" style="color: #f0db4f;"></i> JavaScript (ES6+)</li>
+            <li><i class="fab fa-react" style="color: #61dbfb;"></i> React</li>
+            <li><i class="fas fa-mobile-alt" style="color: var(--secondary);"></i> Responsive design</li>
+          </ul>
+        </div>
+        
+        <div class="skill-card">
+          <h3><i class="fas fa-server"></i> Back-end</h3>
+          <ul class="skill-list">
+            <li><i class="fab fa-python" style="color: #3776ab;"></i> Python</li>
+            <li><i class="fas fa-code" style="color: #092e20;"></i> Django</li>
+            <li><i class="fas fa-flask" style="color: #000;"></i> Flask</li>
+            <li><i class="fab fa-node-js" style="color: #3c873a;"></i> Node.js</li>
+            <li><i class="fas fa-exchange-alt" style="color: var(--secondary);"></i> API REST</li>
+            <li><i class="fas fa-user-shield" style="color: var(--secondary);"></i> Authentification</li>
+          </ul>
+        </div>
+        
+        <div class="skill-card">
+          <h3><i class="fas fa-database"></i> Bases de données</h3>
+          <ul class="skill-list">
+            <li><i class="fas fa-database" style="color: #336791;"></i> PostgreSQL</li>
+            <li><i class="fas fa-database" style="color: #00758f;"></i> MySQL</li>
+            <li><i class="fas fa-database" style="color: #00758f;"></i>Sqlserver</li>
+            <li><i class="fas fa-leaf" style="color: #4db33d;"></i> MongoDB</li>
+          </ul>
+        </div>
+        
+        <div class="skill-card">
+          <h3><i class="fas fa-tools"></i> Outils & Environnement</h3>
+          <ul class="skill-list">
+            <li><i class="fab fa-git-alt" style="color: #f1502f;"></i> Git</li>
+            <li><i class="fab fa-github" style="color: rgb(168, 158, 156);"></i> GitHub</li>
+            <li><i class="fab fa-linux" style="color: #000;"></i> Linux</li>
+            <li><i class="fas fa-cloud-upload-alt" style="color: var(--secondary);"></i> Déploiement web</li>
+            <li><i class="fas fa-terminal" style="color: var(--secondary);"></i> Terminal / CLI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PROJETS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projets Réalisés</h2>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">
+            <i class="fas fa-briefcase"></i> Application métier interne
+          </h3>
+          <p style="line-height: 1.7; margin-bottom: 20px;">
+            Application web destinée à un usage professionnel,
+            avec gestion des utilisateurs et des données.
+          </p>
+          <div>
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">Authentication</span>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3 class="project-title">
+            <i class="fas fa-shield-alt"></i> API REST sécurisée
+          </h3>
+          <p style="line-height: 1.7; margin-bottom: 20px;">
+            Développement d'une API backend avec authentification
+            et gestion des permissions utilisateurs.
+          </p>
+          <div>
+            <span class="tech-badge">Flask</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">API REST</span>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3 class="project-title">
+            <i class="fas fa-desktop"></i> Plateforme web
+          </h3>
+          <p style="line-height: 1.7; margin-bottom: 20px;">
+            Participation au développement d'une plateforme web
+            orientée performance et sécurité.
+          </p>
+          <div>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">MongoDB</span>
+            <span class="tech-badge">Responsive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FORMATION ET SOFT SKILLS -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Formation & Méthodologies</h2>
+      
+      <div class="two-columns">
+        <div class="column">
+          <div class="skill-card">
+            <h3><i class="fas fa-graduation-cap"></i> Formation</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-book" style="color: var(--accent);"></i> Formation autodidacte en développement web</li>
+              <li><i class="fas fa-project-diagram" style="color: var(--accent);"></i> Apprentissage continu via projets personnels et professionnels</li>
+              <li><i class="fas fa-laptop" style="color: var(--accent);"></i> Cours en ligne : Python, Django, développement web</li>
+              <li><i class="fas fa-code" style="color: var(--accent);"></i> Pratique intensive sur plateformes de codage</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="skill-card">
+            <h3><i class="fas fa-brain"></i> Soft Skills & Méthodologies</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-users" style="color: var(--accent);"></i> Travail en équipe</li>
+              <li><i class="fas fa-tasks" style="color: var(--accent);"></i> Méthodologie Agile</li>
+              <li><i class="fas fa-user-check" style="color: var(--accent);"></i> Autonomie</li>
+              <li><i class="fas fa-clipboard-list" style="color: var(--accent);"></i> Rigueur et organisation</li>
+              <li><i class="fas fa-lightbulb" style="color: var(--accent);"></i> Résolution de problèmes</li>
+              <li><i class="fas fa-comments" style="color: var(--accent);"></i> Communication professionnelle</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero min-h-screen bg-primary text-primary-content mt-16">
-    <div class="hero-content flex-col lg:flex-row-reverse animate__animated animate__fadeIn">
-      <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-lg opacity-50 animate-pulse-slow"></div>
-        <img src="./image1.jpg" alt="Photo de Deo Mande" 
-             class="relative max-w-xs lg:max-w-sm rounded-full shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500 animate-float">
-        <div class="absolute -bottom-2 -right-2 bg-secondary text-white p-3 rounded-full shadow-lg">
-          <i class="fas fa-python text-2xl"></i>
-        </div>
-      </div>
       
-      <div class="text-center lg:text-left lg:pr-12 mt-8 lg:mt-0">
-        <div class="badge badge-accent mb-4 animate-bounce-slow">
-          <i class="fas fa-star mr-2"></i>Développeur Python
-        </div>
-        <h1 class="text-5xl sm:text-6xl font-bold mb-4 animate__animated animate__fadeInUp">
-          Deo Mande
-        </h1>
-        <p class="py-6 text-xl opacity-90">
-          Je transforme vos idées en solutions web robustes avec 
-          <span class="text-secondary font-bold">Python</span>, 
-          <span class="text-accent font-bold">Django</span> et 
-          <span class="text-info font-bold">Flask</span>
-        </p>
-        
-        <div class="flex flex-wrap justify-center lg:justify-start gap-4 animate__animated animate__fadeInUp animate__delay-1s">
-          <a href="#contact" class="btn btn-secondary btn-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-            <i class="fas fa-paper-plane mr-2"></i>Contactez-moi
-          </a>
-          <a href="#skills" class="btn btn-outline btn-lg btn-primary hover:scale-105 transition-all">
-            <i class="fas fa-arrow-down mr-2"></i>Mes compétences
-          </a>
-        </div>
-        
-        <!-- Réseaux sociaux -->
-        <div class="flex justify-center lg:justify-start gap-4 mt-8">
-          <a href="https://github.com/Mande-Dev" target="_blank" 
-             class="btn btn-circle btn-ghost hover:bg-base-100 hover:text-primary hover:scale-110 transition-all">
-            <i class="fab fa-github text-2xl"></i>
-          </a>
-          <a href="https://wa.me/+243843352870" target="_blank"
-             class="btn btn-circle btn-ghost hover:bg-green-500 hover:text-white hover:scale-110 transition-all">
-            <i class="fab fa-whatsapp text-2xl"></i>
-          </a>
-          <a href="mailto:mandedeo17@gmail.com"
-             class="btn btn-circle btn-ghost hover:bg-red-500 hover:text-white hover:scale-110 transition-all">
-            <i class="fas fa-envelope text-2xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <a href="#about" class="btn btn-circle btn-ghost">
-        <i class="fas fa-chevron-down text-2xl"></i>
-      </a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 px-4 bg-base-200">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4 text-primary animate__animated">
-          <span class="border-b-4 border-secondary pb-2">À propos de moi</span>
-        </h2>
-        <p class="text-lg opacity-80 max-w-2xl mx-auto">
-          Passionné par la création de solutions web innovantes
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Photo avec effet -->
-        <div class="relative group">
-          <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-          <div class="relative overflow-hidden rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
-            <img src="./image2.jpg" alt="Photo de Deo Mande" 
-                 class="w-full h-64 lg:h-96 object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-base-200/50 to-transparent"></div>
-          </div>
-          
-          <!-- Badge expérience -->
-          <div class="absolute -bottom-4 -right-4 bg-accent text-white p-4 rounded-xl shadow-lg transform rotate-3">
-            <div class="text-center">
-              <div class="text-3xl font-bold">3+</div>
-              <div class="text-sm">ans d'expérience</div>
+      <div style="max-width: 600px; margin: 50px auto 0;">
+        <div class="skill-card">
+          <h3><i class="fas fa-language"></i> Langues</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 10px;">
+                <i class="fas fa-flag"></i>
+              </div>
+              <h4 style="margin-bottom: 5px;">Français</h4>
+              <p>Langue maternelle</p>
             </div>
-          </div>
-        </div>
-
-        <!-- Contenu -->
-        <div class="space-y-6">
-          <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="card-body">
-              <h3 class="card-title text-2xl">
-                <i class="fas fa-rocket text-primary mr-3"></i>
-                Ma passion
-              </h3>
-              <p class="text-lg">
-                Je suis passionné par le développement web avec <span class="font-bold text-primary">Python</span>, 
-                particulièrement avec les frameworks <span class="font-bold text-secondary">Django</span> et 
-                <span class="font-bold text-accent">Flask</span>.
-              </p>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 10px;">
+                <i class="fas fa-flag-usa"></i>
+              </div>
+              <h4 style="margin-bottom: 5px;">Anglais</h4>
+              <p>Niveau technique professionnel</p>
             </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="card-body">
-              <h3 class="card-title text-2xl">
-                <i class="fas fa-bullseye text-primary mr-3"></i>
-                Mon objectif
-              </h3>
-              <p class="text-lg">
-                Créer des applications web <span class="font-bold text-primary">robustes</span>, 
-                <span class="font-bold text-secondary">performantes</span> et 
-                <span class="font-bold text-accent">faciles à maintenir</span>, adaptées aux besoins réels des utilisateurs.
-              </p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="card-body">
-              <h3 class="card-title text-2xl">
-                <i class="fas fa-code text-primary mr-3"></i>
-                Mon expertise
-              </h3>
-              <p class="text-lg">
-                Sites web dynamiques, API RESTful, applications backend complètes et solutions sur mesure 
-                pour transformer vos idées en réalité numérique.
-              </p>
-            </div>
-          </div>
-          
-          <!-- CTA -->
-          <div class="pt-6">
-            <a href="#contact" class="btn btn-primary btn-lg w-full lg:w-auto group">
-              <span class="group-hover:scale-110 transition-transform inline-block">
-                Travaillons ensemble
-                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
-              </span>
-            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 px-4 bg-base-100">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 text-primary animate__animated">
-          <span class="border-b-4 border-accent pb-2">Mes Compétences</span>
-        </h2>
-        <p class="text-lg opacity-80 max-w-2xl mx-auto">
-          Technologies et outils que je maîtrise pour réaliser vos projets
+  <!-- SECTION CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <h2 class="section-title">Contact</h2>
+        <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px;">
+          Disponible pour des opportunités professionnelles et des projets.
+          N'hésitez pas à me contacter pour discuter de vos besoins.
         </p>
-      </div>
-      
-      <!-- Grille des compétences -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Python -->
-        <div class="skill-card group" data-skill="python">
-          <div class="skill-icon">
-            <i class="fab fa-python text-4xl"></i>
-          </div>
-          <h3 class="skill-title">Python</h3>
-          <p class="skill-desc">Développement backend & analyse de données</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-          <span class="skill-percent">90%</span>
-          <div class="skill-tags">
-            <span class="tag">Django</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Pandas</span>
-          </div>
-        </div>
-
-        <!-- Web Frontend -->
-        <div class="skill-card group" data-skill="frontend">
-          <div class="skill-icon">
-            <i class="fas fa-code text-4xl"></i>
-          </div>
-          <h3 class="skill-title">Frontend</h3>
-          <p class="skill-desc">HTML, CSS, JavaScript modernes</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 85%"></div>
-          </div>
-          <span class="skill-percent">85%</span>
-          <div class="skill-tags">
-            <span class="tag">React</span>
-            <span class="tag">Tailwind</span>
-            <span class="tag">Responsive</span>
-          </div>
-        </div>
-
-        <!-- Django -->
-        <div class="skill-card group" data-skill="django">
-          <div class="skill-icon">
-            <i class="fas fa-server text-4xl"></i>
-          </div>
-          <h3 class="skill-title">Django</h3>
-          <p class="skill-desc">Framework Python full-stack</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 88%"></div>
-          </div>
-          <span class="skill-percent">88%</span>
-          <div class="skill-tags">
-            <span class="tag">REST API</span>
-            <span class="tag">ORM</span>
-            <span class="tag">Auth</span>
-          </div>
-        </div>
-
-        <!-- Flask -->
-        <div class="skill-card group" data-skill="flask">
-          <div class="skill-icon">
-            <i class="fas fa-flask text-4xl"></i>
-          </div>
-          <h3 class="skill-title">Flask</h3>
-          <p class="skill-desc">Micro-framework Python léger</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 82%"></div>
-          </div>
-          <span class="skill-percent">82%</span>
-          <div class="skill-tags">
-            <span class="tag">API</span>
-            <span class="tag">Extensions</span>
-            <span class="tag">Microservices</span>
-          </div>
-        </div>
-
-        <!-- Database -->
-        <div class="skill-card group" data-skill="database">
-          <div class="skill-icon">
-            <i class="fas fa-database text-4xl"></i>
-          </div>
-          <h3 class="skill-title">Bases de données</h3>
-          <p class="skill-desc">SQL & NoSQL solutions</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-          <span class="skill-percent">80%</span>
-          <div class="skill-tags">
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">MongoDB</span>
-          </div>
-        </div>
-
-        <!-- DevOps -->
-        <div class="skill-card group" data-skill="devops">
-          <div class="skill-icon">
-            <i class="fas fa-cloud text-4xl"></i>
-          </div>
-          <h3 class="skill-title">DevOps & Cloud</h3>
-          <p class="skill-desc">Déploiement & infrastructure</p>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 75%"></div>
-          </div>
-          <span class="skill-percent">75%</span>
-          <div class="skill-tags">
-            <span class="tag">Docker</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Git</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-4 bg-base-200">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 text-primary animate__animated">
-          <span class="border-b-4 border-secondary pb-2">Contactez-moi</span>
-        </h2>
-        <p class="text-lg opacity-80 max-w-2xl mx-auto">
-          Discutons de votre projet et trouvons ensemble la meilleure solution
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Informations de contact -->
-        <div class="space-y-6">
-          <div class="contact-info-card group">
+        
+        <div class="contact-grid">
+          <div class="contact-card">
             <div class="contact-icon">
               <i class="fas fa-envelope"></i>
             </div>
-            <div>
-              <h3 class="contact-info-title">Email</h3>
-              <a href="mailto:mandedeo17@gmail.com" class="contact-info-link">
-                mandedeo17@gmail.com
-              </a>
-            </div>
+            <h3 style="margin-bottom: 10px;">Email</h3>
+            <a href="mailto:mandedeo17@gmail.com" class="contact-link">
+              mandedeo17@gmail.com
+            </a>
           </div>
           
-          <div class="contact-info-card group">
-            <div class="contact-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <div>
-              <h3 class="contact-info-title">WhatsApp</h3>
-              <a href="https://wa.me/+243843352870" target="_blank" class="contact-info-link">
-                +243 84 33 52 870
-              </a>
-            </div>
-          </div>
-          
-          <div class="contact-info-card group">
+          <div class="contact-card">
             <div class="contact-icon">
               <i class="fab fa-github"></i>
             </div>
-            <div>
-              <h3 class="contact-info-title">GitHub</h3>
-              <a href="https://github.com/Mande-Dev" target="_blank" class="contact-info-link">
-                github.com/Mande-Dev
-              </a>
-            </div>
+            <h3 style="margin-bottom: 10px;">GitHub</h3>
+            <a href="https://github.com/Mande-Dev" target="_blank" class="contact-link">
+              github.com/Mande-Dev
+            </a>
           </div>
-          
-          <!-- Statut de disponibilité -->
-          <div class="bg-base-100 p-6 rounded-2xl shadow-lg mt-8">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span class="font-bold">Disponible pour de nouveaux projets</span>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
             </div>
-            <p class="opacity-80">
-              Réponse sous 24h maximum. N'hésitez pas à me contacter pour discuter de vos besoins.
-            </p>
+            <h3 style="margin-bottom: 10px;">LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/deo-mande-123456789/" target="_blank" class="contact-link">
+              linkedin.com/in/deo-mande-123456789/
+            </a>
           </div>
-        </div>
 
-        <!-- Formulaire -->
-        <form id="contactForm" class="bg-base-100 p-8 rounded-2xl shadow-xl space-y-6">
-          <div class="form-group">
-            <label for="name" class="form-label">
-              <i class="fas fa-user mr-2"></i>Votre nom
-            </label>
-            <input type="text" id="name" name="name" 
-                   class="form-input" 
-                   placeholder="Jean Dupont"
-                   required>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-facebook"></i>
+            </div>
+            <h3 style="margin-bottom: 10px;">Facebook</h3>
+            <a href="https://www.facebook.com/deo.mande.123456789/" target="_blank" class="contact-link">
+              facebook.com/deo.mande.123456789/
+            </a>
           </div>
-          
-          <div class="form-group">
-            <label for="email" class="form-label">
-              <i class="fas fa-envelope mr-2"></i>Votre email
-            </label>
-            <input type="email" id="email" name="email" 
-                   class="form-input" 
-                   placeholder="jean@exemple.com"
-                   required>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject" class="form-label">
-              <i class="fas fa-tag mr-2"></i>Sujet
-            </label>
-            <select id="subject" name="subject" class="form-input" required>
-              <option value="" disabled selected>Choisissez un sujet</option>
-              <option value="projet">Nouveau projet</option>
-              <option value="collaboration">Collaboration</option>
-              <option value="freelance">Mission freelance</option>
-              <option value="question">Question technique</option>
-              <option value="autre">Autre</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message" class="form-label">
-              <i class="fas fa-comment mr-2"></i>Votre message
-            </label>
-            <textarea id="message" name="message" 
-                      class="form-input h-40" 
-                      placeholder="Décrivez votre projet ou votre demande..."
-                      required></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-lg w-full group">
-            <span class="group-hover:scale-105 transition-transform inline-block">
-              <i class="fas fa-paper-plane mr-2"></i>
-              Envoyer le message
-            </span>
-          </button>
-          
-          <p class="text-center text-sm opacity-70">
-            <i class="fas fa-lock mr-1"></i>
-            Vos informations sont sécurisées et ne seront pas partagées
-          </p>
-        </form>
+        
+
       </div>
     </div>
   </section>
 
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer bg-neutral text-neutral-content p-10">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Colonne 1: À propos -->
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fas fa-code text-3xl text-primary"></i>
-            <span class="text-2xl font-bold">Deo Mande</span>
-          </div>
-          <p class="opacity-80">
-            Développeur Python spécialisé en création d'applications web modernes, performantes et évolutives.
-          </p>
-        </div>
-
-        <!-- Colonne 2: Liens rapides -->
-        <div>
-          <h3 class="footer-title">Navigation</h3>
-          <div class="grid grid-cols-2 gap-2">
-            <a href="#about" class="link link-hover hover:text-primary transition-colors">
-              <i class="fas fa-chevron-right mr-2"></i>À propos
-            </a>
-            <a href="#skills" class="link link-hover hover:text-primary transition-colors">
-              <i class="fas fa-chevron-right mr-2"></i>Compétences
-            </a>
-            <a href="#contact" class="link link-hover hover:text-primary transition-colors">
-              <i class="fas fa-chevron-right mr-2"></i>Contact
-            </a>
-            <a href="#hero" class="link link-hover hover:text-primary transition-colors">
-              <i class="fas fa-chevron-right mr-2"></i>Accueil
-            </a>
-          </div>
-        </div>
-
-        <!-- Colonne 3: Réseaux sociaux -->
-        <div>
-          <h3 class="footer-title">Connectez-vous</h3>
-          <div class="flex gap-4">
-            <a href="https://github.com/Mande-Dev" target="_blank" 
-               class="btn btn-circle btn-ghost hover:bg-base-100 hover:text-primary transform hover:scale-110 transition-all">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="https://wa.me/+243843352870" target="_blank"
-               class="btn btn-circle btn-ghost hover:bg-green-500 hover:text-white transform hover:scale-110 transition-all">
-              <i class="fab fa-whatsapp text-xl"></i>
-            </a>
-            <a href="mailto:mandedeo17@gmail.com"
-               class="btn btn-circle btn-ghost hover:bg-red-500 hover:text-white transform hover:scale-110 transition-all">
-              <i class="fas fa-envelope text-xl"></i>
-            </a>
-          </div>
-          
-          <div class="mt-6">
-            <p class="text-sm opacity-70">
-              <i class="fas fa-map-marker-alt mr-2"></i>
-              Disponible en télétravail partout dans le monde
-            </p>
-          </div>
-        </div>
+  <!-- PIED DE PAGE -->
+  <footer>
+    <div class="container">
+      <div class="footer-nav">
+        <a href="#home" class="footer-link"><i class="fas fa-home"></i> Accueil</a>
+        <a href="#profile-photo" class="footer-link"><i class="fas fa-user"></i> Profil</a>
+        <a href="#experience-current" class="footer-link"><i class="fas fa-briefcase"></i> Expérience</a>
+        <a href="#skills" class="footer-link"><i class="fas fa-cogs"></i> Compétences</a>
+        <a href="#projects" class="footer-link"><i class="fas fa-project-diagram"></i> Projets</a>
+        <a href="#contact" class="footer-link"><i class="fas fa-envelope"></i> Contact</a>
       </div>
       
-      <!-- Copyright -->
-      <div class="border-t border-base-300 pt-8 mt-8 text-center">
-        <p class="opacity-70">
-          © <span id="currentYear"></span> Deo Mande. Tous droits réservés.
-        </p>
-        <p class="text-sm opacity-50 mt-2">
-          Développé avec <i class="fas fa-heart text-red-500 mx-1"></i> et beaucoup de café
+      <div class="copyright">
+        <p>© 2025 – Deo Mande | Développeur Web Full-Stack</p>
+        <p style="margin-top: 10px;">
+          <i class="fas fa-code"></i> Conçu et développé avec soin
         </p>
       </div>
     </div>
   </footer>
-
-  <!-- Bouton Back to Top -->
-  <button id="backToTop" 
-          class="fixed bottom-6 right-6 btn btn-circle btn-primary shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 hidden z-40">
-    <i class="fas fa-arrow-up text-xl"></i>
-  </button>
-
-  <!-- Bouton Dark Mode -->
-  <button id="themeToggle" 
-          class="fixed bottom-6 left-6 btn btn-circle btn-secondary shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-40">
-    <i class="fas fa-moon text-xl"></i>
-  </button>
-
-  <!-- SweetAlert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-  <!-- Scripts personnalisés -->
-  <script src="./script.js"></script>
-  <script src="./main.js"></script>
 </body>
 </html>
+```
