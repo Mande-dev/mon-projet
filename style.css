@@ -460,3 +460,204 @@ section {
     text-decoration: none;
   }
 }
+
+/* ===== DARK MODE OVERRIDES ===== */
+[data-theme="dark"] {
+  --primary-color: #10b981;
+  --secondary-color: #059669;
+  --accent-color: #34d399;
+}
+
+[data-theme="dark"] body {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(16, 185, 129, 0.95) !important;
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background-color: rgba(16, 185, 129, 0.98) !important;
+}
+
+[data-theme="dark"] .bg-base-100 {
+  background-color: #2d3748 !important;
+}
+
+[data-theme="dark"] .bg-base-200 {
+  background-color: #4a5568 !important;
+}
+
+[data-theme="dark"] .bg-base-300 {
+  background-color: #718096 !important;
+}
+
+[data-theme="dark"] .bg-neutral {
+  background-color: #2d3748 !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .contact-info-card,
+[data-theme="dark"] .form-input {
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .form-input::placeholder {
+  color: #a0aec0 !important;
+}
+
+[data-theme="dark"] .text-primary {
+  color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+[data-theme="dark"] .text-accent {
+  color: var(--accent-color) !important;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .btn-outline {
+  background-color: transparent !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .progress {
+  background-color: #4a5568 !important;
+}
+
+[data-theme="dark"] .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Dark mode specific animations */
+[data-theme="dark"] .animate-pulse-glow {
+  animation: pulse-glow-dark 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-dark {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+}
+
+/* Theme toggle button animation */
+.theme-toggle-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.theme-toggle-btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Dark mode badges */
+[data-theme="dark"] .badge {
+  background-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .badge-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .badge-accent {background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Dark mode forms */
+[data-theme="dark"] select.form-input option {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+/* Print styles for dark mode */
+@media print {
+  [data-theme="dark"] body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  [data-theme="dark"] .no-print {
+    display: none !important;
+  }
+}

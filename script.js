@@ -506,3 +506,102 @@ if (typeof module !== 'undefined' && module.exports) {
         isValidEmail
     };
 }
+
+// ===== GESTION DU THÈME =====
+function initThemeToggle() {
+    if (!elements.themeToggle) return;
+    
+    // Fonction pour détecter la préférence système
+    function getSystemPreference() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'forest';
+    }
+    
+    // Fonction pour mettre à jour le thème
+    function updateTheme(theme) {
+        state.currentTheme = theme;
+        
+        // Mettre à jour l'attribut data-theme
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        // Sauvegarder la préférence
+        localStorage.setItem('portfolio-theme', theme);
+        
+        // Mettre à jour l'icône
+        updateThemeIcon();
+        
+        // Animer le changement
+        animateThemeChange();
+    }
+    
+    // Vérifier le thème sauvegardé ou détecter la préférence système
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    const systemPreference = getSystemPreference();
+    
+    if (savedTheme) {
+        updateTheme(savedTheme);
+    } else {
+        updateTheme(systemPreference === 'dark' ? 'dark' : 'forest');
+    }
+    
+    // Écouter les changements de préférence système
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('portfolio-theme')) {
+            updateTheme(e.matches ? 'dark' : 'forest');
+        }
+    });
+    
+    // Gestion du clic sur le bouton
+    elements.themeToggle.addEventListener('click', () => {
+        const newTheme = state.currentTheme === 'forest' ? 'dark' : 'forest';
+        updateTheme(newTheme);
+    });
+    
+    // Ajouter une classe pour l'animation
+    elements.themeToggle.classList.add('theme-toggle-btn');
+}
+
+function updateThemeIcon() {
+    if (!elements.themeToggle) return;
+    const icon = elements.themeToggle.querySelector('i');
+    if (icon) {
+        icon.className = state.currentTheme === 'forest' 
+            ? 'fas fa-moon text-xl' 
+            : 'fas fa-sun text-xl';
+        
+        // Animation de rotation
+        icon.style.transform = 'rotate(360deg)';
+        icon.style.transition = 'transform 0.5s ease';
+        
+        setTimeout(() => {
+            icon.style.transform = 'rotate(0)';
+        }, 500);
+    }
+}
+
+function animateThemeChange() {
+    // Ajouter une classe pour l'animation de transition
+    document.documentElement.classList.add('theme-changing');
+    
+    // Créer un effet de transition
+    const overlay = document.createElement('div');
+    overlay.className = 'theme-transition-overlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: ${state.currentTheme === 'dark' ? '#000' : '#fff'};
+        opacity: 0;
+        z-index: 9999;
+        pointer-events: none;
+        animation: themeFade 0.5s ease;
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    setTimeout(() => {
+        document.documentElement.classList.remove('theme-changing');
+        overlay.remove();
+    }, 500);
+}

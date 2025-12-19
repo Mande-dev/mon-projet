@@ -34,13 +34,58 @@
             'float': 'float 3s ease-in-out infinite',
             'pulse-slow': 'pulse 3s ease-in-out infinite',
             'bounce-slow': 'bounce 2s ease-in-out infinite',
+            'ripple': 'ripple-animation 0.6s linear',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            'ripple-animation': {
+              'to': {
+                transform: 'scale(4)',
+                opacity: '0'
+              }
+            }
           }
         }
       },
       plugins: [require("daisyui")],
       daisyui: {
-        themes: ["forest", "dark", "light"],
-        darkTheme: "forest",
+        themes: [
+          {
+            forest: {
+              "primary": "#166534",
+              "secondary": "#059669",
+              "accent": "#10b981",
+              "neutral": "#1f2937",
+              "base-100": "#ffffff",
+              "base-200": "#f3f4f6",
+              "base-300": "#e5e7eb",
+              "info": "#3b82f6",
+              "success": "#10b981",
+              "warning": "#f59e0b",
+              "error": "#ef4444",
+            },
+            dark: {
+              "primary": "#10b981",
+              "secondary": "#059669",
+              "accent": "#34d399",
+              "neutral": "#2d3748",
+              "base-100": "#1a202c",
+              "base-200": "#2d3748",
+              "base-300": "#4a5568",
+              "info": "#3b82f6",
+              "success": "#10b981",
+              "warning": "#f59e0b",
+              "error": "#ef4444",
+              "--rounded-box": "1rem",
+              "--rounded-btn": "0.5rem",
+              "--rounded-badge": "1.9rem",
+            }
+          }
+        ],
+        darkTheme: "dark",
       },
     }
   </script>
@@ -118,7 +163,7 @@
       <div class="relative">
         <div class="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-lg opacity-50 animate-pulse-slow"></div>
         <img src="./image1.jpg" alt="Photo de Deo Mande" 
-             class="relative max-w-xs lg:max-w-sm rounded-full shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500 animate-float">
+            class="relative max-w-xs lg:max-w-sm rounded-full shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500 animate-float">
         <div class="absolute -bottom-2 -right-2 bg-secondary text-white p-3 rounded-full shadow-lg">
           <i class="fas fa-python text-2xl"></i>
         </div>
@@ -150,11 +195,11 @@
         <!-- Réseaux sociaux -->
         <div class="flex justify-center lg:justify-start gap-4 mt-8">
           <a href="https://github.com/Mande-Dev" target="_blank" 
-             class="btn btn-circle btn-ghost hover:bg-base-100 hover:text-primary hover:scale-110 transition-all">
+            class="btn btn-circle btn-ghost hover:bg-base-100 hover:text-primary hover:scale-110 transition-all">
             <i class="fab fa-github text-2xl"></i>
           </a>
           <a href="https://wa.me/+243843352870" target="_blank"
-             class="btn btn-circle btn-ghost hover:bg-green-500 hover:text-white hover:scale-110 transition-all">
+            class="btn btn-circle btn-ghost hover:bg-green-500 hover:text-white hover:scale-110 transition-all">
             <i class="fab fa-whatsapp text-2xl"></i>
           </a>
           <a href="mailto:mandedeo17@gmail.com"
@@ -283,9 +328,9 @@
           <h3 class="skill-title">Python</h3>
           <p class="skill-desc">Développement backend & analyse de données</p>
           <div class="skill-progress">
-            <div class="progress-bar" style="width: 90%"></div>
+            <div class="progress-bar" style="width: 50%"></div>
           </div>
-          <span class="skill-percent">90%</span>
+          <span class="skill-percent">50%</span>
           <div class="skill-tags">
             <span class="tag">Django</span>
             <span class="tag">Flask</span>
@@ -301,9 +346,9 @@
           <h3 class="skill-title">Frontend</h3>
           <p class="skill-desc">HTML, CSS, JavaScript modernes</p>
           <div class="skill-progress">
-            <div class="progress-bar" style="width: 85%"></div>
+            <div class="progress-bar" style="width: 70%"></div>
           </div>
-          <span class="skill-percent">85%</span>
+          <span class="skill-percent">70%</span>
           <div class="skill-tags">
             <span class="tag">React</span>
             <span class="tag">Tailwind</span>
@@ -319,9 +364,9 @@
           <h3 class="skill-title">Django</h3>
           <p class="skill-desc">Framework Python full-stack</p>
           <div class="skill-progress">
-            <div class="progress-bar" style="width: 88%"></div>
+            <div class="progress-bar" style="width: 40%"></div>
           </div>
-          <span class="skill-percent">88%</span>
+          <span class="skill-percent">40%</span>
           <div class="skill-tags">
             <span class="tag">REST API</span>
             <span class="tag">ORM</span>
@@ -337,9 +382,9 @@
           <h3 class="skill-title">Flask</h3>
           <p class="skill-desc">Micro-framework Python léger</p>
           <div class="skill-progress">
-            <div class="progress-bar" style="width: 82%"></div>
+            <div class="progress-bar" style="width: 70%"></div>
           </div>
-          <span class="skill-percent">82%</span>
+          <span class="skill-percent">70%</span>
           <div class="skill-tags">
             <span class="tag">API</span>
             <span class="tag">Extensions</span>
@@ -355,9 +400,9 @@
           <h3 class="skill-title">Bases de données</h3>
           <p class="skill-desc">SQL & NoSQL solutions</p>
           <div class="skill-progress">
-            <div class="progress-bar" style="width: 80%"></div>
+            <div class="progress-bar" style="width: 60%"></div>
           </div>
-          <span class="skill-percent">80%</span>
+          <span class="skill-percent">60%</span>
           <div class="skill-tags">
             <span class="tag">PostgreSQL</span>
             <span class="tag">MySQL</span>
@@ -593,8 +638,10 @@
   </button>
 
   <!-- Bouton Dark Mode -->
+  <!-- Bouton Dark Mode -->
   <button id="themeToggle" 
-          class="fixed bottom-6 left-6 btn btn-circle btn-secondary shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-40">
+          class="fixed bottom-6 left-6 btn btn-circle btn-secondary shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-40 theme-toggle-btn"
+          aria-label="Changer le thème">
     <i class="fas fa-moon text-xl"></i>
   </button>
 
